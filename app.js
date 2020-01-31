@@ -58,10 +58,7 @@ class App extends React.Component {
                     type='submit'
                     value='Find Movie' />
                 </form>
-                    {(this.state.movie)
-                    ?<MovieInfo movie={this.state.movie} /> 
-                : ''
-            }
+                 {this.state.movie && <MovieInfo movie={this.state.movie} />}
             </React.Fragment>
             
         )
