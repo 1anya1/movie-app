@@ -7,7 +7,9 @@ class MovieInfo extends React.Component{
                 <h2>Year: {this.props.movie.Year}</h2>
                 <img src={this.props.movie.Poster} alt={this.props.movie.Title} />
                 <h3>Genre: {this.props.movie.Genre}</h3>
+                <h4>Rating: {this.props.movie.imdbRating}</h4>
                 <h4>Plot: {this.props.movie.Plot}</h4>
+                <h5>Actors: {this.props.movie.Actors}</h5>
             </div>
         )
     }
@@ -46,7 +48,8 @@ class App extends React.Component {
     };
     render() {
         return (
-            <React.Fragment>
+            <div class="container">
+           
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor='movieTitle'>Title</label>
                     <input
@@ -56,10 +59,12 @@ class App extends React.Component {
                     onChange={this.handleChange} />
                     <input
                     type='submit'
-                    value='Find Movie' />
+                    value='Find Movie'
+                    />
                 </form>
                  {this.state.movie && <MovieInfo movie={this.state.movie} />}
-            </React.Fragment>
+            
+            </div>
             
         )
     }
