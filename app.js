@@ -1,3 +1,18 @@
+
+class MovieInfo extends React.Component{
+    render() {
+        return (
+            <div>
+                <h1>Title: {this.props.movie.Title}</h1>
+                <h2>Year: {this.props.movie.Year}</h2>
+                <img src={this.props.movie.Poster} alt={this.props.movie.Title} />
+                <h3>Genre: {this.props.movie.Genre}</h3>
+                <h4>Plot: {this.props.movie.Plot}</h4>
+            </div>
+        )
+    }
+}
+
 class App extends React.Component {
     constructor (props) {
         super(props)
@@ -21,7 +36,11 @@ class App extends React.Component {
             () =>{
                 fetch(this.state.searchURL)
                 .then((response)=>response.json())
-                .then((json)=>console.log(json), (err) => console.log(err));
+                .then((json)=>this.setState({
+                    movie: json,
+                    movieTitle: ''
+                }), 
+                (err) => console.log(err));
             }
         );
     };
@@ -39,7 +58,10 @@ class App extends React.Component {
                     type='submit'
                     value='Find Movie' />
                 </form>
-                <a href={this.state.searchURL}>{this.state.searchURL}</a>
+                    {(this.state.movie)
+                    ?<MovieInfo movie={this.state.movie} /> 
+                : ''
+            }
             </React.Fragment>
             
         )
