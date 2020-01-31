@@ -52,7 +52,7 @@ class App extends React.Component {
             <div>
                 <div class= 'info'>
                 <h3>Website built using React, AJAX, and omdbapi.com API to generate movie content.</h3>
-                <h3>Enter a name of a movie to see the year it was made, genre, rating, plot, and actors.</h3>
+                <h3>Enter a name of a movie to see: the year it was made, genre, rating, plot, and actors.</h3>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor='movieTitle'>Title</label>
