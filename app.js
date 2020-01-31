@@ -2,14 +2,15 @@
 class MovieInfo extends React.Component{
     render() {
         return (
-            <div>
+            <div class='content'>
                 <h1>Title: {this.props.movie.Title}</h1>
                 <h2>Year: {this.props.movie.Year}</h2>
                 <img src={this.props.movie.Poster} alt={this.props.movie.Title} />
                 <h3>Genre: {this.props.movie.Genre}</h3>
                 <h4>Rating: {this.props.movie.imdbRating}</h4>
                 <h4>Plot: {this.props.movie.Plot}</h4>
-                <h5>Actors: {this.props.movie.Actors}</h5>
+                <h4>Actors: {this.props.movie.Actors}</h4>
+               
             </div>
         )
     }
@@ -48,8 +49,11 @@ class App extends React.Component {
     };
     render() {
         return (
-            <div class="container">
-           
+            <div>
+                <div class= 'info'>
+                <h3>Website built using React, AJAX, and omdbapi.com API to generate movie content.</h3>
+                <h3>Enter a name of a movie to see the year it was made, genre, rating, plot, and actors.</h3>
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor='movieTitle'>Title</label>
                     <input

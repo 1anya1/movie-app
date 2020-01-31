@@ -1,6 +1,50 @@
-#movieTitle {
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+input {
     border: 1px solid black;
     width: auto;
-    height: 50px;
+    height: 30px;
     margin : 11px;
+}
+label, input{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+
+}
+ .content, .info {
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center; 
+    align-items: center;  
+    margin: 50px;
+    padding: 25px;
+    border: 1px solid black; 
+}
+form {
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    grid-template-columns: 60px .1fr 100px   ;
+    justify-items: center; 
+    align-items: center;  
+    margin: 50px;
+    justify-content: center; 
+
+}
+
+h2 , h3, h4,h5{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 450px) {
+    img {
+        width: 200px;
+    }
+    form{
+       
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: auto;
+    }
+  
+
 }
