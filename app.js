@@ -14,10 +14,17 @@ class App extends React.Component {
     };
     handleSubmit = (event) => {
         event.preventDefault();
-        this.setState({
+        this.setState(
+            {
             searchURL: this.state.baseURL + this.state.apikey +this.state.query+this.state.movieTitle
-        })
-    }
+            }, 
+            () =>{
+                fetch(this.state.searchURL)
+                .then((response)=>response.json())
+                .then((json)=>console.log(json), (err) => console.log(err));
+            }
+        );
+    };
     render() {
         return (
             <React.Fragment>
